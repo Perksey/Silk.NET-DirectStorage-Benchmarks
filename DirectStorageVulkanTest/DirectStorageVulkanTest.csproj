@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <OutputType>Exe</OutputType>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+        <PackageReference Include="Silk.NET.Direct3D12" Version="2.14.0" />
+        <PackageReference Include="Silk.NET.DXGI" Version="2.14.0" />
+        <PackageReference Include="Silk.NET.Vulkan" Version="2.14.0" />
+        <PackageReference Include="Silk.NET.Vulkan.Extensions.KHR" Version="2.14.0" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Remove="file.bin" />
+      <Content Include="file.bin">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+</Project>
