@@ -146,10 +146,14 @@ public unsafe record struct D3D12Objects
     {
         CloseHandle(BufferHandle);
         RestBuffer.Release();
-        Token.Cancel();
+        Token?.Cancel();
+#if DEBUG
         Device.Release(); // info queue
+#endif
         Device.Release(); // device
+#if DEBUG
         DebugLayer.Release();
+#endif
         D3D12.Dispose();
         DXGIFactory.Release(); // no idea
         DXGIFactory.Release(); // factory
