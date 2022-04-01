@@ -4,7 +4,7 @@
         <OutputType>Exe</OutputType>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Nullable>enable</Nullable>
-        <RestoreSources>$(MSBuildThisFileDirectory)../Packages;$(RestoreSources)</RestoreSources>
+        <AdditionalProjectRestoreSources>$(MSBuildThisFileDirectory)../Packages;$(AdditionalProjectRestoreSources)</AdditionalProjectRestoreSources>
         <RuntimeIdentifier>$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
     </PropertyGroup>
     <ItemGroup>
@@ -17,8 +17,8 @@
         <PackageReference Include="Silk.NET.DirectStorage.Native" Version="1.0.0" />
     </ItemGroup>
     <ItemGroup>
-      <None Remove="file.bin" />
-      <Content Include="file.bin">
+      <None Remove="Data/*.bin" />
+      <Content Include="Data/*.bin">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
